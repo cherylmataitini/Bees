@@ -1,0 +1,24 @@
+﻿@model List<Bee>
+
+<button onclick="location.href='@Url.Action("Damage", "Home")'" class="btn btn-primary">Do Damage</button>
+<p style="display: inline; margin: 0 10px">Generate random damage value between 0-80 and apply to all bees.</p>
+<hr />
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Bee Type</th>
+            <th>Health</th>
+            <th>Dead</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bee in Model)
+        {
+            <tr>
+                <td>@bee.GetType().Name</td>
+                <td>@bee.Health</td>
+                <td>@bee.Dead</td>
+            </tr>
+        }
+</table>
+
